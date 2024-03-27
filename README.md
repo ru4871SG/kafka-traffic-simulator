@@ -4,7 +4,7 @@ This repository contains two Python scripts for simulating a traffic toll collec
 
 This repository also contains a SQL script `create_table_livetolldata.sql` that you can use to create the table in your PostgreSQL database. Lastly, you can also use the provided Bash script if you want to automate all the script executions from this repository.
 
-Update (March 26, 2024): I added two new files in case you want to store the simulated traffic data into a local Apache Cassandra datacenter. The new files include 1 Python script `streaming_data_reader_cassandra.py` and 1 CQL script`create_table_toll_events_cassandra.cql`.
+**Update (March 26, 2024):** I added two new files in case you want to store the simulated traffic data into a local Apache Cassandra datacenter. The new files include 1 Python script `streaming_data_reader_cassandra.py` and 1 CQL script`create_table_toll_events_cassandra.cql`.
 
 
 ## Overview
@@ -14,7 +14,7 @@ Update (March 26, 2024): I added two new files in case you want to store the sim
 - `create_table_livetolldata.sql`: SQL script that creates an example table called "livetolldata" inside the "public" schema. The same table name is referred in `streaming_data_reader.py`.
 - `execute_all.sh`: Bash script to automate all the above script executions (doesn't include Cassandra-related scripts).
 - `streaming_data_reader_cassandra.py`: The equivalent of `streaming_data_reader.py` but it stores the data into a local Cassandra datacenter instead.
-- `create_table_toll_events_cassandra.cql`: CQL (Cassandra Query Language) to create an example table called "toll_events" inside the "traffic" keyspace. The same table name is referred in `streaming_data_reader_cassandra.py`.
+- `create_table_toll_events_cassandra.cql`: CQL (Cassandra Query Language) script to create an example table called "toll_events" inside the "traffic" keyspace. The same table name is referred in `streaming_data_reader_cassandra.py`.
 
 ## Prerequisites
 
@@ -32,4 +32,4 @@ You can then create `.env` file with your database configuration (check `.env.ex
 
 After you are done with the configuration, you can just run the provided bash script `execute_all.sh` which will automatically execute `create_table_livetolldata.sql`, `toll_traffic_generator.py`, and `streaming_data_reader.py`.
 
-Update (March 26, 2024): If you want to store the data into Cassandra (and not PostgreSQL), you can just execute `streaming_data_reader_cassandra.py` in exchange of `streaming_data_reader.py`. Make sure you have created the "toll_events" table as instructed in `create_table_toll_events_cassandra.cql`. You can use a standard keyspace named "traffic" with SimpleStrategy and replication factor of 1 since this is just used for simple simulation.
+**Update (March 26, 2024):** If you want to store the data into Cassandra (and not PostgreSQL), you can just execute `streaming_data_reader_cassandra.py` in exchange of `streaming_data_reader.py`. Make sure you have created the "toll_events" table as instructed in `create_table_toll_events_cassandra.cql`. You can use a standard keyspace named "traffic" with SimpleStrategy and replication factor of 1 since this is just used for simple simulation.
