@@ -1,6 +1,4 @@
 -- Table: public.livetolldata
-
--- DROP TABLE IF EXISTS public.livetolldata;
 CREATE TABLE IF NOT EXISTS public.livetolldata
 (
     "timestamp" date,

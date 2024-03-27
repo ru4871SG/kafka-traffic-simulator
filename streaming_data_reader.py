@@ -29,8 +29,8 @@ print("Connecting to Kafka")
 consumer = KafkaConsumer(db_topic)
 print("Connected to Kafka")
 print(f"Reading messages from the topic {db_topic}")
-for msg in consumer:
 
+for msg in consumer:
     # Extract information from kafka
     message = msg.value.decode("utf-8")
 

@@ -8,8 +8,8 @@ producer = KafkaProducer(bootstrap_servers='localhost:9092')
 
 TOPIC = 'toll'
 
-VEHICLE_TYPES = ("car", "car", "car", "car", "car", "car", "car", "car",
-                 "car", "car", "car", "truck", "truck", "truck",
+VEHICLE_TYPES = ("car", "car", "car", "car", "car", "car", "car", "bus",
+                 "bus", "bus", "bus", "truck", "truck", "truck",
                  "truck", "van", "van")
 for _ in range(100000):
     vehicle_id = randint(10000, 10000000)
